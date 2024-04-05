@@ -22,4 +22,14 @@ public class sherebeavior : MonoBehaviour
     {
         agent.SetDestination(target.position);
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("player"))
+        {
+          Debug.Log($"game over bitch", other.gameObject);
+          Destroy(other);
+
+        }
+    }
 }
